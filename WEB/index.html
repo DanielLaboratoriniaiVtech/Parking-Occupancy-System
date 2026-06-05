@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/javascript/script.js"></script>
+    <script src="src/javascript/server.js" type="module"></script>
+    <title>Bakalauras</title>
+</head>
+<body>
+    <header>
+        <div class="header flex-container">
+            <div class="pavadinimas"><p>Išmanioji parkavimosi Sistema</p></div>
+            <div class="data">
+                <p id="laikas">2026-04-12</p>
+            </div>
+        </div>
+    </header>
+    <!-- Prisijungimo forma vartotojo autentifikacijai -->
+    <div id="authBox">
+        <input id="email" type="email" placeholder="El. paštas">
+        <input id="password" type="password" placeholder="Slaptažodis">
+        <button onclick="login()">Prisijungti</button>
+    </div>
+    <!-- Pagrindinis sistemos valdymo skydas, rodomas tik prisijungusiam vartotojui -->
+    <div id="dashboard">
+        <div class="layout flex-container">
+            <!-- Šoninis navigacijos meniu tarp sistemos puslapių -->
+        <aside class="sidebar">
+            <a href="#" class="menu-item" onclick="showPage('dashboardPage')">Valdymo skydas</a>
+            <a href="#" class="menu-item" onclick="showPage('cameraPage')">Tiesioginė kamera</a>
+            <a href="#" class="menu-item" onclick="showPage('historyPage')">Istorija</a>
+        </aside>
+            <div class="main">
+                <!-- Valdymo skydelio puslapis su realaus laiko duomenimis -->
+                <div id="dashboardPage" class="page active-page">
+                    <div class="title">
+                        <h3>Sistemos stebėsena</h3>
+                        <p>Inteleaktualus stebėjimas ir erdvinė analizė realiuoju laiku</p>
+                    </div>
+                    <div class="korteles flex-container">
+                        <div class="kortele flex-container">
+                            <p class="kortelesTekstas">Automobilių skaičius</p>
+                            <p class="skaicius" id="cars"></p>
+                        </div>
+                        <div class="kortele flex-container">
+                            <p class="kortelesTekstas">Žmonių skaičius</p>
+                            <p class="skaicius" id="people"></p>
+                        </div>
+                        <div class="kortele flex-container">
+                            <p class="kortelesTekstas">Sistemos būsena</p>
+                            <p id="statusText"></p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas class="grafikas" id="grafikas"></canvas>
+                    </div>
+                    <!-- Tiesioginės kameros puslapis -->
+                    <div class="video-container">
+                        <img id="liveVideoDashboard" src="http://127.0.0.1:5000/video_feed?t=0" alt="Tiesioginė kamera">
+                    </div>
+                </div>
+                <div id="cameraPage" class="page">
+                    <div class="title">
+                        <h3>Tiesioginė kamera</h3>
+                        <p>Vaizdas iš kameros realiuoju laiku</p>
+                    </div>
+                    <div class="video-container video-container1">
+                        <img id="liveVideo" src="http://127.0.0.1:5000/video_feed?t=0" alt="Tiesioginė kamera">
+                    </div>
+                </div>
+                <!-- Istorinių duomenų analizės puslapis -->
+                <div id="historyPage" class="page">
+                    <div class="title">
+                        <h3>Istorija</h3>
+                        <p>Automobilių ir žmonių kiekio istorija pagal valandas</p>
+                    </div>
+                    <div class="historyGraphs flex-container">
+                        <div class="history-container">
+                            <canvas id="historyBarChart"></canvas>
+                        </div>
+                        <div class="history-container small-chart">
+                            <canvas id="historyPieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+<!-- Chart.js biblioteka grafikų atvaizdavimui -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</script>
+</body>
+</html>

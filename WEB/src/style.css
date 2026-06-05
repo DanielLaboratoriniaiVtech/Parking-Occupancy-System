@@ -1,0 +1,348 @@
+ @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+
+*{
+   
+    margin: 0;
+    padding: 0;
+    font-family: "Space Grotesk", sans-serif;
+   
+}
+
+a{
+    text-decoration: none;
+    color: #00F5FF;
+}
+
+html{
+    font-size: 16px;
+}
+
+.flex-container{
+    display: flex;
+}
+
+.header {
+    background-color: #0B0E14;
+    position: relative;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        rgba(0, 245, 255, 0),
+        rgba(0, 245, 255, 1),
+        rgba(0, 245, 255, 0)
+    );
+    
+}
+
+.header.flex-container{
+    justify-content:space-between;
+}
+
+.header p{
+    font-size: 1.5rem;
+    font-family: "Space Grotesk", sans-serif;
+    padding: 1.5rem 0;
+    font-weight: bold;
+    color: #00F5FF;
+    text-shadow: 0 0 4px #00F5FF;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+.pavadinimas{
+    padding-left: 2rem;
+}
+
+.data{
+    padding-right: 2rem;
+}
+
+.layout.flex-container {
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+.sidebar {
+    width: 16em;
+    background: #22262F;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+}
+
+.menu-item {
+    display: block;
+    padding: 12px 12px 12px 58px;
+    margin-bottom: 8px;
+    color: #64748B;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.menu-item:hover {
+    background: #00F5FF15;
+    color: #00F5FF;
+    box-shadow: 0 4px 4px #00000025;
+    border-right: 2px solid #00F5FF;
+}
+
+.main {
+    flex: 1;
+    background: #0B0E14;
+    min-height: 100%;
+}
+
+.title{
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+
+.title h3{
+    font-weight: bold;
+    font-size: 2.25rem;
+    color: #ECEDF6;
+}
+
+.title p{
+    font-weight: 100;
+    font-size: 1rem;
+    color: #A9ABB3;
+}
+
+.korteles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.korteles.flex-container{
+    justify-content: center;
+}
+
+.kortele{
+    background-color: #64748B;
+    width: 222px;
+    height: 169px;
+    margin: 0px 12px;
+    border-radius: 24px;
+    background-color: #22262F;
+    border: 1px solid #00F5FF30;
+}
+.kortele.flex-container{
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.kortele>p, .proc{
+    padding-bottom: 0.625rem;
+    padding-left: 1.5rem;
+
+}
+
+.kortele > p.skaicius{
+    font-size: 2em;
+    font-weight: bold;
+    color: #00F5FF;
+
+}
+
+.kortele > p.kortelesTekstas{
+    font-size: 1rem;
+    color: #A9ABB3;
+    text-transform: uppercase;
+    letter-spacing: 0.075rem;
+}
+
+.kortele> .proc{
+    color: #00F5FF;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 62.5rem;
+    height: 31.25rem;
+    margin: 2rem auto;
+    padding: 1rem;
+
+    background: #0B0E14;
+    border-radius: 1rem;
+
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+}
+
+.active{
+    font-size: 2em;
+    font-weight: bold;
+    color: #00F5FF;
+}
+
+.inactive{
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.video-container{
+    
+    width: 100%;
+    max-width: 62.5rem;
+    height: 31.25rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #0B0E14;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+}
+
+
+.video-container.video-container1{
+    
+    width: 100%;
+    max-width: 100rem;
+    height: 50rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #0B0E14;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+}
+
+.video-container>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+#dashboard{
+    display: none;
+}
+
+#authBox {
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    background: #0B0E14;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#authBox::before {
+    content: "Prisijungimas";
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #ECEDF6;
+    text-shadow: 0 0 6px #00F5FF;
+    margin-bottom: 1rem;
+}
+
+#authBox input {
+    width: 320px;
+    padding: 0.9rem 1rem;
+
+    background: #22262F;
+    border: 1px solid #00F5FF30;
+    border-radius: 14px;
+
+    color: #ECEDF6;
+    font-size: 1rem;
+    outline: none;
+}
+
+#authBox input::placeholder {
+    color: #64748B;
+}
+
+#authBox input:focus {
+    border-color: #00F5FF;
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.25);
+}
+
+#authBox button {
+    width: 320px;
+    padding: 0.9rem 1rem;
+
+    background: #22262F;
+    border: 1px solid #00F5FF;
+    border-radius: 14px;
+
+    color: #00F5FF;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.075rem;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#authBox button:hover {
+    background: #00F5FF15;
+    box-shadow: 0 0 18px rgba(0, 245, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+#authBox button:active {
+    transform: translateY(0);
+}
+
+#authBox .auth-error {
+    color: #ff0000;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.page {
+    display: none;
+}
+
+.page.active-page {
+    display: block;
+}
+
+.history-container {
+    width: 100%;
+    max-width: 62.5rem;
+    margin: 2rem auto;
+    padding: 1rem;
+
+    background: #0B0E14;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+}  
+
+.history-container {
+    width: 100%;
+    max-width: 62.5rem;
+    height: 31.25rem;
+    margin: 2rem auto;
+    padding: 1rem;
+
+    background: #0B0E14;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+}
+
+.small-chart {
+    max-width: 32rem;
+    height: 28rem;
+}
