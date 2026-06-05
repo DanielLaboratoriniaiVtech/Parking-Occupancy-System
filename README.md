@@ -18,6 +18,8 @@ A smart parking occupancy detection system that monitors parking spaces and dete
 - OpenCV
 - NumPy
 - YOLO
+- FLASK
+- FIREBASE
 
 ## Installation
 
@@ -46,22 +48,10 @@ python main.py
 
 The system supports multiple YOLO models for inference. You can switch between:
 
-- **YOLOv11n-T (T model)** – Faster inference, lower resource usage.
-- **YOLOv11n-R (R model)** – Higher accuracy, more computationally intensive.
+- **YOLOv11n-T (Thermal model)** – Faster inference, lower resource usage, only works with thermal video.
+- **YOLOv11n-R (RGB model)** – Higher accuracy, more computationally intensive.
 
-To change the model, update the model path in the configuration or source code:
-
-```python
-MODEL_PATH = "models/yolo11n-t.pt"  # T model
-```
-
-or
-
-```python
-MODEL_PATH = "models/yolo11n-r.pt"  # R model
-```
-
-Choose the model that best fits your performance and accuracy requirements.
+To change the model, during the Video stream press R for RGB or press T for Thermal model.
 
 ## Project Structure
 
